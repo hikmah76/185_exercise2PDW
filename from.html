@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>185 DOM Javascript</title>
+</head>
+
+<body style="display: flex; justify-content: center; align-items: center;">
+    <div class="container">
+        <div class="header" style="text-align: center;">
+            <h3>Daftar Lagu Favorite</h3>
+        </div>
+        <form id="registrationForm">
+            <table style="margin: 0 auto;">
+                <tr>
+                    <td>Nama:</td>
+                    <td><input type="text" placeholder="Masukkan Nama Anda" id="nama"></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin:</td>
+                    <td>
+                        <select name="gender" id="gender" required>
+                            <option value="male">Laki-laki</option>
+                            <option value="female">Perempuan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lagu Favorite:</td>
+                    <td><input type="text" placeholder="Masukkan Lagu Favorite Anda" id="lagu_favorite"></td>
+                </tr>
+                <tr>
+                    <td>Penyanyi/Band Favorite: </td>
+                    <td><input type="text" placeholder="Masukkan Penyanyi/Band Favorite Anda" id="penyanyi_band_favorite"></td>
+                </tr>
+                <tr>
+                    <td>Tanggal: </td>
+                    <td><input type="date" id="tanggal"></td> <!-- Updated to use date input type -->
+                </tr>
+                <tr>
+                    <td>Platform Musik Favorit:</td>
+                    <td>
+                        <div style="display: flex;">
+                            <input type="radio" name="Platform" id="spotify" value="Spotify">
+                            <label for="spotify">Spotify</label>
+                        </div>
+                        <div style="display: flex;">
+                            <input type="radio" name="Platform" id="youTube" value="YouTube">
+                            <label for="youTube">YouTube</label>
+                        </div>
+                        <div style="display: flex;">
+                            <input type="radio" name="Platform" id="joox" value="Joox">
+                            <label for="joox">Joox</label>
+                        </div>
+                        <div style="display: flex;">
+                            <input type="radio" name="Platform" id="lainnya" value="Lainnya">
+                            <label for="lainnya">Lainnya</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alasan Memilih Lagu Ini:</td>
+                    <td><textarea name="alasan_memilih_lagu_ini" id="alasan_memilih_lagu_ini" placeholder="Masukkan Alasan Anda Memilih Lagu Ini" cols="30" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;"><button type="button" onclick="kirimData()">Klik</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+
+</html>
+
+<script>
+function kirimData() {
+    var nama = document.getElementById("nama").value;
+    var laguFavorite = document.getElementById("lagu_favorite").value;
+    var penyanyiBandFavorite = document.getElementById("penyanyi_band_favorite").value;
+    var tanggal = document.getElementById("tanggal").value; // Added this line to get the date value
+    var peminatan = document.querySelector('input[name="Platform"]:checked').value;
+    var alasanMemilihLagu = document.getElementById("alasan_memilih_lagu_ini").value;
+
+    alert(`
+        Nama: ${nama}
+        Lagu Favorite: ${laguFavorite}
+        Penyanyi/Band Favorite: ${penyanyiBandFavorite}
+        Tanggal: ${tanggal}  // Included the date in the alert
+        Platform Musik Favorit: ${peminatan}
+        Alasan Memilih Lagu Ini: ${alasanMemilihLagu}
+    `);
+}
+
+function submitForm() {
+    var form = document.getElementById("registrationForm");
+    var formData = new FormData(form);
+
+    document.getElementById("output").innerHTML = "";
+
+    var output = "<h2>Informasi yang Anda isi:</h2>";
+    formData.forEach(function(value, key) {
+        output += "<p><strong>" + key + ":</strong> " + value + "</p>";
+    });
+
+    document.getElementById("output").innerHTML = output;
+}
+</script>
