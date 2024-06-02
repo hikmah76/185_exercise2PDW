@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!--menghubungkan ke css-->
     <title>185 DOM Javascript</title>
 </head>
-
+<!--bagian header-->
 <body style="display: flex; justify-content: center; align-items: center;">
     <div class="container">
         <div class="header" style="text-align: center;">
-            <h3>Daftar Lagu Favorite</h3>
+            <h3>Daftar Lagu Favorite</h3> <!--bagian judulnya-->
         </div>
         <form id="registrationForm">
             <table style="margin: 0 auto;">
                 <tr>
-                    <td>Nama:</td>
+                    <td>Nama:</td> <!--text field-->
                     <td><input type="text" placeholder="Masukkan Nama Anda" id="nama"></td>
                 </tr>
                 <tr>
-                    <td>Jenis Kelamin:</td>
+                    <td>Jenis Kelamin:</td><!--drop down-->
                     <td>
                         <select name="gender" id="gender" required>
                             <option value="male">Laki-laki</option>
@@ -29,19 +29,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Lagu Favorite:</td>
-                    <td><input type="text" placeholder="Masukkan Lagu Favorite Anda" id="lagu_favorite"></td>
+                    <td>Lagu Favorite:</td> <!--text field 2-->
+                    <td><input type="text" placeholder="Masukkan Judul Lagu Favorite Anda" id="lagu_favorite"></td>
                 </tr>
                 <tr>
-                    <td>Penyanyi/Band Favorite: </td>
+                    <td>Penyanyi/Band Favorite: </td> <!--text filed-->
                     <td><input type="text" placeholder="Masukkan Penyanyi/Band Favorite Anda" id="penyanyi_band_favorite"></td>
                 </tr>
                 <tr>
-                    <td>Tanggal: </td>
+                    <td>Tanggal: </td> <!--date-->
                     <td><input type="date" id="tanggal"></td> <!-- Updated to use date input type -->
                 </tr>
                 <tr>
-                    <td>Platform Musik Favorit:</td>
+                    <td>Platform Musik Favorit:</td> <!--radio button-->
                     <td>
                         <div style="display: flex;">
                             <input type="radio" name="Platform" id="spotify" value="Spotify">
@@ -62,9 +62,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Alasan Memilih Lagu Ini:</td>
+                    <td>Alasan Memilih Lagu Ini:</td><!--text area-->
                     <td><textarea name="alasan_memilih_lagu_ini" id="alasan_memilih_lagu_ini" placeholder="Masukkan Alasan Anda Memilih Lagu Ini" cols="30" rows="5"></textarea></td>
                 </tr>
+                <!--untuk mengirim data yang sudah diisi-->
                 <tr>
                     <td colspan="2" style="text-align: center;"><button type="button" onclick="kirimData()">Klik</button></td>
                 </tr>
@@ -76,13 +77,13 @@
 </body>
 
 </html>
-
+<!--bagian ini seperti js yang nantinya akan menghasilkan po up-->
 <script>
 function kirimData() {
     var nama = document.getElementById("nama").value;
     var laguFavorite = document.getElementById("lagu_favorite").value;
     var penyanyiBandFavorite = document.getElementById("penyanyi_band_favorite").value;
-    var tanggal = document.getElementById("tanggal").value; // Added this line to get the date value
+    var tanggal = document.getElementById("tanggal").value; 
     var peminatan = document.querySelector('input[name="Platform"]:checked').value;
     var alasanMemilihLagu = document.getElementById("alasan_memilih_lagu_ini").value;
 

@@ -1,7 +1,7 @@
-.container {
+.container { /*container*/
     border: 3px double black;
     height: auto;
     width: 600px;
-    background-color: rgb(224, 159, 137);
+    background-color: rgb(224, 159, 137); 
     text-align: center;
 }

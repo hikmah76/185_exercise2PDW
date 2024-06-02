@@ -1,15 +1,15 @@
-body {
+body { /*bagian body*/
     background-image: url(https://i.pinimg.com/736x/b1/83/5c/b1835c6acdc8a7919136e1847abaceac.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
   }
   
-  h1 {
+  h1 { /*bagian h1*/
     font-family: 'Great Vibes', cursive;
   }
   
-  h2 {
+  h2 { /*bagian h2*/
     font-family: 'Lobster Two', cursive;
     letter-spacing: 1px;
     text-transform: uppercase;

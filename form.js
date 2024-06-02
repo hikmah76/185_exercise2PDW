@@ -1,4 +1,4 @@
-function kirimData() {
+function kirimData() { //untuk mengumpulkan data
     var nama = document.getElementById("nama").value;
     var laguFavorite = document.getElementById("lagu_favorite").value;
     var penyanyiBandFavorite = document.getElementById("penyanyi_band_favorite").value;
@@ -6,6 +6,7 @@ function kirimData() {
     var peminatan = document.querySelector('input[name="Platform"]:checked').value;
     var alasanMemilihLagu = document.getElementById("alasan_memilih_lagu_ini").value;
 
+    //ini nanti muncul stelah klik kirim
     alert(`
         Nama: ${nama}
         Lagu Favorite: ${laguFavorite}
@@ -16,6 +17,7 @@ function kirimData() {
     `);
 }
 
+//untuk menangkap dada dari form
 function submitForm() {
     var form = document.getElementById("registrationForm");
     var formData = new FormData(form);
